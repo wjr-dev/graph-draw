@@ -91,7 +91,7 @@
 
     g = svg.append("g");
 
-    d3.json("/json/drawgraph_test.json", function (error, graph) {
+    d3.json("./json/drawgraph_test.json", function (error, graph) {
       if (error) throw error;
       graph.nodes = graph.st.map(item => {
         return {
