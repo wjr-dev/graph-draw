@@ -1,7 +1,7 @@
 <!--
  * @Author: wangwenchao6
  * @Date: 2021-12-06 13:58:21
- * @LastEditTime: 2021-12-07 17:49:32
+ * @LastEditTime: 2021-12-07 18:00:41
  * @LastEditors: wangwenchao6
  * @Description: 
 -->
@@ -78,7 +78,7 @@ export default {
         .append("marker")
         .attr("id", "arrowhead")
         .attr("viewBox", "-0 -3 10 10") //the bound of the SVG viewport for the current SVG fragment. defines a coordinate system 10 wide and 10 high starting on (0,-5)
-        .attr("refX", 40) // x coordinate for the reference point of the marker. If circle is bigger, this need to be bigger.
+        .attr("refX", 35) // x coordinate for the reference point of the marker. If circle is bigger, this need to be bigger.
         .attr("refY", 0)
         .attr("orient", "auto")
         .attr("markerWidth", 10)
