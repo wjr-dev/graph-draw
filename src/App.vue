@@ -1,7 +1,7 @@
 <!--
  * @Author: wangwenchao6
  * @Date: 2021-12-06 13:58:21
- * @LastEditTime: 2021-12-07 18:00:41
+ * @LastEditTime: 2021-12-07 18:04:08
  * @LastEditors: wangwenchao6
  * @Description: 
 -->
@@ -61,8 +61,8 @@ export default {
   methods: {
     init(dataset) {
       //画布大小
-      var width = 1900;
-      var height = 1900;
+      var width = 3000;
+      var height = 3000;
       //在 body 里添加一个 SVG 画布
       var svg = d3
         .select("body")
@@ -112,25 +112,25 @@ export default {
         })
         .style("pointer-events", "none");
       // 关联文字
-      const edgelabels = svg
-        .selectAll(".edgelabel")
-        .data(dataset.links)
-        .enter()
-        .append("text")
-        .style("pointer-events", "none")
-        .attr("class", "edgelabel")
-        .attr("id", function (d, i) {
-          return "edgelabel" + i;
-        });
+      // const edgelabels = svg
+      //   .selectAll(".edgelabel")
+      //   .data(dataset.links)
+      //   .enter()
+      //   .append("text")
+      //   .style("pointer-events", "none")
+      //   .attr("class", "edgelabel")
+      //   .attr("id", function (d, i) {
+      //     return "edgelabel" + i;
+      //   });
 
-      edgelabels
-        .append("textPath") //To render text along the shape of a <path>, enclose the text in a <textPath> element that has an href attribute with a reference to the <path> element.
-        .attr("xlink:href", function (d, i) {
-          return "#edgepath" + i;
-        })
-        .style("pointer-events", "none")
-        .attr("startOffset", "50%")
-        .text((d) => d.pathName);
+      // edgelabels
+      //   .append("textPath") //To render text along the shape of a <path>, enclose the text in a <textPath> element that has an href attribute with a reference to the <path> element.
+      //   .attr("xlink:href", function (d, i) {
+      //     return "#edgepath" + i;
+      //   })
+      //   .style("pointer-events", "none")
+      //   .attr("startOffset", "50%")
+      //   .text((d) => d.pathName);
 
       const node = svg
         .append("g")
