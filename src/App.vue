@@ -1,12 +1,14 @@
 <!--
  * @Author: wangwenchao6
  * @Date: 2021-12-06 13:58:21
- * @LastEditTime: 2021-12-07 18:21:49
+ * @LastEditTime: 2021-12-07 18:28:42
  * @LastEditors: wangwenchao6
  * @Description: 
 -->
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <button @click="reLayout">重新布局</button>
+  </div>
 </template>
 
 <script>
@@ -59,6 +61,9 @@ export default {
     }
   },
   methods: {
+    reLayout(){
+      localStorage.removeItem('data')
+    },
     init(dataset) {
       //画布大小
       var width = 3000;
@@ -245,7 +250,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
