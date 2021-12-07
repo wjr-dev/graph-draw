@@ -1,7 +1,7 @@
 <!--
  * @Author: wangwenchao6
  * @Date: 2021-12-06 13:58:21
- * @LastEditTime: 2021-12-07 17:26:54
+ * @LastEditTime: 2021-12-07 17:34:41
  * @LastEditors: wangwenchao6
  * @Description: 
 -->
@@ -21,7 +21,7 @@ export default {
     if (data) {
       this.init(JSON.parse(data));
     } else {
-      fetch("/drawgraph_test.json")
+      fetch("./drawgraph_test.json")
         .then((response) => response.json())
         .then((res) => {
           const graph = {
