@@ -1,7 +1,7 @@
 <!--
  * @Author: wangwenchao6
  * @Date: 2021-12-06 13:58:21
- * @LastEditTime: 2021-12-07 17:34:41
+ * @LastEditTime: 2021-12-07 17:49:32
  * @LastEditors: wangwenchao6
  * @Description: 
 -->
@@ -26,7 +26,7 @@ export default {
         .then((res) => {
           const graph = {
             nodes: res.st.map((item) => {
-              if (item.pathName === "bus-12") {
+              if (item.pathName === "bus-1200000") {
                 return {
                   id: item.mRID,
                   category: "fixed",
@@ -62,7 +62,7 @@ export default {
     init(dataset) {
       //画布大小
       var width = 1900;
-      var height = 900;
+      var height = 1900;
       //在 body 里添加一个 SVG 画布
       var svg = d3
         .select("body")
@@ -139,7 +139,7 @@ export default {
         .data(dataset.nodes)
         .enter()
         .append("circle")
-        .attr("r", 30)
+        .attr("r", 25)
         .attr("fill", (d) => d3.schemeDark2[d.group])
         .call(
           d3
@@ -163,7 +163,7 @@ export default {
 
       var simulation = d3
         .forceSimulation()
-        .force("charge", d3.forceManyBody())
+        .force("charge", d3.forceManyBody().strength(-500))
         .force(
           "link",
           d3.forceLink().id(function (d) {
@@ -173,7 +173,7 @@ export default {
         .force("center", d3.forceCenter(width / 2, height / 2));
 
       simulation.nodes(dataset.nodes).on("tick", ticked);
-      simulation.force("link").links(dataset.links).distance(300);
+      simulation.force("link").links(dataset.links).distance(200);
       function ticked() {
         node
           .attr("cx", (d) => {
